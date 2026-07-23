@@ -58,6 +58,12 @@ variable "container_name" {
   description = "Blob container name"
 }
 
+# ── Private Endpoint ─────────────────────
+variable "private_endpoint_name" {
+  type        = string
+  description = "Private endpoint name"
+}
+
 # ── Tags ─────────────────────────────────
 variable "tags" {
   type        = map(string)

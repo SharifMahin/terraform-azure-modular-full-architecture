@@ -37,3 +37,11 @@ output "storage_account_id" {
 output "primary_blob_endpoint" {
   value = module.storage_account.primary_blob_endpoint
 }
+
+output "private_endpoint_id" {
+  value = module.private_endpoint.private_endpoint_id
+}
+
+output "private_ip_address" {
+  value = module.private_endpoint.private_ip_address
+}
