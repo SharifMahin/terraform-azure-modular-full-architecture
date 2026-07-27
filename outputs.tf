@@ -45,3 +45,23 @@ output "private_endpoint_id" {
 output "private_ip_address" {
   value = module.private_endpoint.private_ip_address
 }
+
+output "identity_id" {
+  value = module.managed_identity.identity_id
+}
+
+output "identity_name" {
+  value = module.managed_identity.identity_name
+}
+
+output "principal_id" {
+  value = module.managed_identity.principal_id
+}
+
+output "key_vault_name" {
+  value = module.key_vault.key_vault_name
+}
+
+output "key_vault_uri" {
+  value = module.key_vault.key_vault_uri
+}

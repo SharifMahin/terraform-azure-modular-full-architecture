@@ -10,5 +10,10 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy    = true # for permanent delete when destroy
+      recover_soft_deleted_key_vaults = true # if delete from portal then this line recover it.
+    }
+  }
 }
