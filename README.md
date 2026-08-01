@@ -58,7 +58,7 @@ modular-arch/
 ├── outputs.tf
 ├── env/
 │   ├── dev.tfvars           # dev environment values (gitignored)
-│   └── example.tfvars       # reference only — copy and fill in values
+│   └── terraform.tfvars.exanple       # reference only — copy and fill in values
 └── modules/
     ├── resource-group/
     │   ├── main.tf
