@@ -98,6 +98,35 @@ variable "vm_password" {
   sensitive   = true
 }
 
+# ── RBAC ─────────────────────────────────
+variable "role_definition_name" {
+  type        = string
+  description = "Azure built-in role name"
+  default     = "Contributor"
+}
+
+# ── Windows VM ───────────────────────────
+variable "public_ip_name" {
+  type        = string
+  description = "Public IP name"
+}
+
+variable "nic_name" {
+  type        = string
+  description = "Network interface name"
+}
+
+variable "vm_name" {
+  type        = string
+  description = "VM name — max 15 chars"
+}
+
+variable "vm_size" {
+  type        = string
+  description = "VM size"
+  default     = "Standard_B2s"
+}
+
 # ── Tags ─────────────────────────────────
 variable "tags" {
   type        = map(string)

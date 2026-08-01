@@ -65,3 +65,23 @@ output "key_vault_name" {
 output "key_vault_uri" {
   value = module.key_vault.key_vault_uri
 }
+
+output "role_assignment_id" {
+  value = module.rbac.role_assignment_id
+}
+
+output "role" {
+  value = module.rbac.role
+}
+
+output "vm_name" {
+  value = module.windows_vm.vm_name
+}
+
+output "vm_public_ip" {
+  value = module.windows_vm.public_ip
+}
+
+output "vm_private_ip" {
+  value = module.windows_vm.private_ip
+}

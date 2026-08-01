@@ -68,3 +68,25 @@ module "key_vault" {
   vm_password             = var.vm_password
   tags                    = var.tags
 }
+
+module "rbac" {
+  source               = "./modules/rbac"
+  scope                = module.resource_group.id
+  role_definition_name = var.role_definition_name
+  principal_id         = module.managed_identity.principal_id
+}
+
+module "windows_vm" {
+  source              = "./modules/windows-vm"
+  public_ip_name      = var.public_ip_name
+  nic_name            = var.nic_name
+  vm_name             = var.vm_name
+  vm_size             = var.vm_size
+  admin_username      = module.key_vault.vm_username
+  admin_password      = module.key_vault.vm_password
+  location            = module.resource_group.location
+  resource_group_name = module.resource_group.name
+  vm_subnet_id        = module.network.vm_subnet_id
+  identity_id         = module.managed_identity.identity_id
+  tags                = var.tags
+}
