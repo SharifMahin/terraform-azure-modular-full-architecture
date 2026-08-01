@@ -1,0 +1,49 @@
+# Copy to env/dev.tfvars or env/prod.tfvars and fill in your values
+
+# ── Resource Group ──────────────────────
+resource_group_name = "rg-<project>-<env>-<region>"
+location            = "japaneast"
+
+# ── Network ─────────────────────────────
+vnet_name          = "vnet-<project>-<env>-<region>"
+address_space      = ["10.0.0.0/16"]
+vm_subnet_name     = "snet-vm-<project>-<env>-<region>"
+vm_subnet_prefixes = ["10.0.1.0/24"]
+pe_subnet_name     = "snet-pe-<project>-<env>-<region>"
+pe_subnet_prefixes = ["10.0.2.0/24"]
+
+# ── NSG ─────────────────────────────────
+nsg_name = "nsg-<project>-<env>-<region>"
+
+# ── Storage Account ──────────────────────
+storage_account_name = "st<project><env><region>"    # globally unique, lowercase, max 24 chars, no hyphens
+container_name       = "cnt-<project>-<env>-<region>"
+
+# ── Private Endpoint ─────────────────────
+private_endpoint_name = "pe-<project>-<env>-<region>"
+
+# ── Managed Identity ─────────────────────
+identity_name = "id-<project>-<env>-<region>"
+
+# ── Key Vault ────────────────────────────
+key_vault_name          = "kv-<project>-<env>-<region>"    # globally unique, max 24 chars
+vm_username_secret_name = "vm-admin-username"
+vm_username             = "<your-admin-username>"
+vm_password_secret_name = "vm-admin-password"
+vm_password             = "<your-secure-password>"
+
+# ── RBAC ─────────────────────────────────
+role_definition_name = "Contributor"    # Reader / Contributor / Owner
+
+# ── Windows VM ───────────────────────────
+public_ip_name = "pip-<project>-<env>-<region>"
+nic_name       = "nic-<project>-<env>-<region>"
+vm_name        = "vm<project><env><region>"    # max 15 chars, no hyphens
+vm_size        = "Standard_B2s"                # Standard_D2s_v3 for better performance
+
+# ── Tags ─────────────────────────────────
+tags = {
+  environment = "<dev|prod>"
+  project     = "<project-name>"
+  owner       = "<your-name>"
+}
