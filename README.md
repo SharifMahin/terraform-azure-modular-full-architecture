@@ -231,7 +231,6 @@ env/*.tfvars
 !env/example.tfvars
 ```
 
-
 ### 3. 🔑 Key Vault soft delete — dev vs prod
 
 Current settings are optimized for dev:
