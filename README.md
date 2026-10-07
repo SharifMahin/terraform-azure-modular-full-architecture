@@ -231,15 +231,8 @@ env/*.tfvars
 !env/example.tfvars
 ```
 
-### 3. 💸 Always destroy when done (dev)
 
-This project deploys billable resources including Windows VM and Private Endpoint. Always destroy when not in use:
-
-```bash
-terraform destroy -var-file="env/dev.tfvars"
-```
-
-### 4. 🔑 Key Vault soft delete — dev vs prod
+### 3. 🔑 Key Vault soft delete — dev vs prod
 
 Current settings are optimized for dev:
 
